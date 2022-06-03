@@ -1,0 +1,49 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+const covidBaseUrl = 'https://api.covid19tracking.narrativa.com';
+
+export const fetchCountries = createAsyncThunk('countries/fetchCountries', async () => {
+    try {
+        const response = await axios.get(`${covidBaseUrl}/api/2022-02-06`);
+        const countries = response.data.dates[Object.keys(response.data.dates)[0]].countries;
+        const countryKeys = Object.keys(countries);
+        const countryData = countryKeys.map((countryKey) => {
+            return countries[countryKey];
+        }).filter((country, i) => i <= 25);
+
+        return countryData;
+    } catch( err ){
+        return err.message
+    }
+});
+
+export const covidSlice = createSlice({
+    name: "covidslice",
+    initialState:{
+        countries: [],
+        status: 'idle',
+        error: null
+    },
+    reducers: {},
+    extraReducers(builder) {
+        builder
+            .addCase(fetchCountries.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(fetchCountries.fulfilled, (state, action) => {
+                state.status = 'succeeded';                
+                state.countries = state.countries.concat(action.payload);
+            })
+            .addCase(fetchCountries.rejected, (state, action) => {
+                state.status = 'failed'
+                state.error = action.error.message
+            })
+    }}
+);
+
+export const selectAllCountries = (state) => state.covid.countries
+export const getDataStatus = (state) => state.covid.status;
+export const getDataError = (state) => state.covid.error;
+
+export default covidSlice.reducer;

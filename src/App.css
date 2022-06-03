@@ -1,16 +1,10 @@
-.App {
-  text-align: center;
-}
+:root {
+  --blue_regular: #598AE7;
+  --blue_deep: #35548B;
+  --font_white: #ffffff;
+  --blue_light: #4668B2;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  --container-height: 100vh;
 }
 
 .App-header {
@@ -24,15 +18,108 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  display:flex;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: var(--blue_light);
+  height:max-content;
+  color: var(--font_white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-label {
+  display: flex;
+  margin-top: 0;
+  justify-content: center;
+  
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5rem;
+  background-color: var(--blue_regular);
+  color: var(--font_white);
+  height: 100px;
 }
+
+.card-label p{
+  padding: 0;
+  margin: 100px;
+  align-self: center;
+}
+
+.container {
+  display:flex;
+  height: var(--container-height);
+  flex-direction: column;
+}
+
+.stats-by-country {
+  background-color: var(--blue_deep);
+  color: var(--font_white);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stats-by-country p {
+  margin: 0px;
+}
+
+.country-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+.country-card {
+  color: var(--font_white);
+  height: 170px;
+  width: 50%;
+}
+
+.country-card:nth-child(4n + 1) {
+  background-color: var(--blue_regular);
+}
+
+.country-card:nth-child(4n + 2) {
+  background-color: var(--blue_regular);
+}
+
+.country-card:nth-child(4n + 3){
+  background-color: var(--blue_deep);
+}
+
+.country-card:nth-child(4n + 4){
+  background-color: var(--blue_deep);
+}
+
+.country-card p {
+  text-align: end;
+  font-size: 1rem;
+  font-family: Helvetica, sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.img-map {
+  color:#35548B;
+  opacity: 0.5;
+  margin: 10px 10px 10px 5px;
+  width: 67px;
+}
+
+/* .country-card:nth-child(even) {
+  background-color: var(--blue_regular);
+}
+
+.country-card:nth-child(odd) {
+  background-color: var(--blue_deep);
+} */
