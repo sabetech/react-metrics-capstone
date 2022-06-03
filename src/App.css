@@ -1,9 +1,8 @@
 :root {
-  --blue_regular: #598AE7;
-  --blue_deep: #35548B;
-  --font_white: #ffffff;
-  --blue_light: #4668B2;
-
+  --blue_regular: #598ae7;
+  --blue_deep: #35548b;
+  --font_white: #fff;
+  --blue_light: #4668b2;
   --container-height: 100vh;
 }
 
@@ -19,12 +18,11 @@
 }
 
 nav {
-  display:flex;
-  justify-content:baseline;
+  display: flex;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   background-color: var(--blue_light);
-  height:max-content;
+  height: max-content;
   color: var(--font_white);
   align-items: center;
 }
@@ -38,7 +36,6 @@ nav {
   display: flex;
   margin-top: 0;
   justify-content: center;
-  
   font-family: Helvetica, sans-serif;
   font-size: 1.5rem;
   background-color: var(--blue_regular);
@@ -46,14 +43,14 @@ nav {
   height: 100px;
 }
 
-.card-label p{
+.card-label p {
   padding: 0;
   margin: 100px;
   align-self: center;
 }
 
 .container {
-  display:flex;
+  display: flex;
   height: var(--container-height);
   flex-direction: column;
 }
@@ -67,7 +64,7 @@ nav {
 }
 
 .stats-by-country p {
-  margin: 0px;
+  margin: 0;
 }
 
 .country-list {
@@ -95,11 +92,11 @@ nav {
   background-color: var(--blue_regular);
 }
 
-.country-card:nth-child(4n + 3){
+.country-card:nth-child(4n + 3) {
   background-color: var(--blue_deep);
 }
 
-.country-card:nth-child(4n + 4){
+.country-card:nth-child(4n + 4) {
   background-color: var(--blue_deep);
 }
 
@@ -120,20 +117,20 @@ nav {
 }
 
 .img-map {
-  color:#35548B;
+  color: #35548b;
   opacity: 0.5;
   margin: 10px 10px 10px 5px;
   width: 67px;
 }
 
 .detail-list-item {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   height: 85px;
   color: var(--font_white);
 }
 
-.detail-list-item > p{
+.detail-list-item > p {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -143,7 +140,7 @@ nav {
 }
 
 .detail-list-item:nth-child(even) {
-  background-color: var(--blue_deep)
+  background-color: var(--blue_deep);
 }
 
 .detail-parent {
@@ -161,7 +158,7 @@ nav {
   width: 50px;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   color: var(--font_white);
   margin-left: 10px;
   margin-right: 40px;

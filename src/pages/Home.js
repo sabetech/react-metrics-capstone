@@ -1,54 +1,55 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCountries, selectAllCountries, getDataStatus } from '../redux/covid';
-import countryISO from "../country-iso.json";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Header from "../components/Header";
-
-
+import { fetchCountries, selectAllCountries, getDataStatus } from '../redux/covid';
+import countryISO from '../country-iso.json';
+import Header from '../components/Header';
 
 function Home() {
-    const countries = useSelector(selectAllCountries);
-    const status = useSelector(getDataStatus);
+  const countries = useSelector(selectAllCountries);
+  const status = useSelector(getDataStatus);
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (status === 'idle'){
-            dispatch(fetchCountries());
-        }
-    },[dispatch, status]);
-    
-    return (
-        <div className="container">
-            <Header headerName={status === 'loading'?'loading':`Date: ${countries[0]?.date}`} 
-            navbarTitle={"Country-Based Covid Stats"} 
-            miniTitle={"STATS BY COUNTRY"}
-            hasBack={false}
-            />
-            <ul className="country-list">
-                {
-                    countries.map((country, i) => {
-                        
-                        return (
-                            <li key={i} className="country-card">
-                                <Link to='/details' state={{
-                                    country: country.name,
-                                    date: country.date
-                                }} className='links'>
-                                    <img className="img-map" src={`https://raw.githubusercontent.com/djaiss/mapsicon/master/all/${countryISO[country.name]?.toLowerCase()}/vector.svg`} alt={country.name}/>
-                                    <p>{country.name}</p>
-                                    <p>Confirmed Cases: {country.today_confirmed}</p>
-                                </Link>
-                            </li>
-                        )
-                    }
-                    
-                    )
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchCountries());
+    }
+  }, [dispatch, status]);
+
+  return (
+    <div className="container">
+      <Header
+        headerName={status === 'loading' ? 'loading' : `Date: ${countries[0]?.date}`}
+        navbarTitle="Country-Based Covid Stats"
+        miniTitle="STATS BY COUNTRY"
+        hasBack={false}
+      />
+      <ul className="country-list">
+        {
+                    countries.map((country, i) => (
+                      <li key={i} className="country-card">
+                        <Link
+                          to="/details"
+                          state={{
+                            country: country.name,
+                            date: country.date,
+                          }}
+                          className="links"
+                        >
+                          <img className="img-map" src={`https://raw.githubusercontent.com/djaiss/mapsicon/master/all/${countryISO[country.name]?.toLowerCase()}/vector.svg`} alt={country.name} />
+                          <p>{country.name}</p>
+                          <p>
+                            Confirmed Cases:
+                            {country.today_confirmed}
+                          </p>
+                        </Link>
+                      </li>
+                    ))
                 }
-            </ul>
-        </div>
-    );
+      </ul>
+    </div>
+  );
 }
 
 export default Home;
