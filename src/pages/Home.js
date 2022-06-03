@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountries, selectAllCountries, getDataStatus } from '../redux/covid';
 import countryISO from "../country-iso.json";
+import { Link } from 'react-router-dom';
+import Header from "../components/Header";
 
 
 
@@ -19,26 +21,25 @@ function Home() {
     
     return (
         <div className="container">
-            <nav>
-                <h3>Country-Based Covid Stats</h3>
-            </nav>
-            <div className="sticky-header">
-                <div className="card-label">
-                    <p>Date: Date Here!</p>
-                </div>
-                <div className="stats-by-country">
-                    <p>STATS BY COUNTRY</p>
-                </div>
-            </div>
+            <Header headerName={status === 'loading'?'loading':`Date: ${countries[0]?.date}`} 
+            navbarTitle={"Country-Based Covid Stats"} 
+            miniTitle={"STATS BY COUNTRY"}
+            hasBack={false}
+            />
             <ul className="country-list">
                 {
                     countries.map((country, i) => {
                         
                         return (
                             <li key={i} className="country-card">
-                                <img className="img-map" src={`https://raw.githubusercontent.com/djaiss/mapsicon/master/all/${countryISO[country.name]?.toLowerCase()}/vector.svg`} alt="gh"/>
-                                <p>{country.name}</p>
-                                <p>Confirmed Cases: {country.today_confirmed}</p>
+                                <Link to='/details' state={{
+                                    country: country.name,
+                                    date: country.date
+                                }} className='links'>
+                                    <img className="img-map" src={`https://raw.githubusercontent.com/djaiss/mapsicon/master/all/${countryISO[country.name]?.toLowerCase()}/vector.svg`} alt={country.name}/>
+                                    <p>{country.name}</p>
+                                    <p>Confirmed Cases: {country.today_confirmed}</p>
+                                </Link>
                             </li>
                         )
                     }
