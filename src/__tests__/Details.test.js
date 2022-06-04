@@ -1,11 +1,6 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import renderer from 'react-test-renderer';
 import axios from 'axios';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import MockAdapter from 'axios-mock-adapter';
-import Details from '../pages/Details';
 import store from '../redux/configureStore';
 import reducer, { fetchRegionsBasedOnCountry } from '../redux/covid';
 
