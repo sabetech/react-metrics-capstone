@@ -9,7 +9,7 @@ describe('Tests: Header', () => {
     const navBar = render(
       <Provider store={store}>
         <Router>
-          <Header />
+          <Header headerName="test" navbarTitle="navTest" miniTitle="miniTest" hasBack={false} />
         </Router>
       </Provider>
       ,

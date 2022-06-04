@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-<h1 align="center"> Space Travelers Hub </h1>
+<h1 align="center"> Covid Country Metrics </h1>
 
-> The website allows users to browse a list of SpaceX tour rockets, make reservations and join missions.
+> The application fetches Covid Data from the Narrativa API and shows in a country by country display according to the date you are looking for.
 
 ## Built With
 
@@ -10,7 +10,8 @@
 
 ## DEMO
 
-[LIVE DEMO LINK](https://heroku_link_goes_here.com)
+[Live Demo Link](https://heroku_link_goes_here.com)
+[Video Demo Link](https://www.loom.com/share/5fa4ea687ee84c37b22f1b6cabf1239c)
 
 ## Getting Started
 
@@ -23,9 +24,9 @@ To get a local copy up and running follow these setup steps below.
 - run `npm run build` to bundle the project with webpack, and
 - run `npm start` to launch the application
 
-## Authors
+## Author
 
-👤 **Authors**
+👤 **Author**
 
 - GitHub: [Albert Mensah-Ansah](https://github.com/sabetech)
 - LinkedIn: [Albert Mensah-Ansah](https://www.linkedin.com/in/albert-mensah-ansah/)
@@ -34,7 +35,7 @@ To get a local copy up and running follow these setup steps below.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/collinsmezie/space-travellers-react/issues).
+Feel free to check the [issues page](https://github.com/sabetech/react-metrics-capstone/issues).
 
 ## Show your support
 
@@ -44,9 +45,5 @@ Give a ⭐️ if you like this project!
 
 Thanks to [Nelson Sakwa](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>) for the UI/UX Guide that helped build this project
 Thanks to [djaiss Mazarin](https://github.com/djaiss) for the map icon project.
-[Project Link](https://github.com/djaiss/mapsicon)
+[Mapicon Project Link](https://github.com/djaiss/mapsicon)
 Huge thanks to everyone who helped us in any capacity to complete this project
-
-## 📝 License
-
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.

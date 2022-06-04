@@ -8,7 +8,9 @@ Object {
       <nav>
         <h3
           class="heading"
-        />
+        >
+          navTest
+        </h3>
       </nav>
       <div
         class="sticky-header"
@@ -16,12 +18,16 @@ Object {
         <div
           class="card-label"
         >
-          <p />
+          <p>
+            test
+          </p>
         </div>
         <div
           class="stats-by-country"
         >
-          <p />
+          <p>
+            miniTest
+          </p>
         </div>
       </div>
     </div>
@@ -30,7 +36,9 @@ Object {
     <nav>
       <h3
         class="heading"
-      />
+      >
+        navTest
+      </h3>
     </nav>
     <div
       class="sticky-header"
@@ -38,12 +46,16 @@ Object {
       <div
         class="card-label"
       >
-        <p />
+        <p>
+          test
+        </p>
       </div>
       <div
         class="stats-by-country"
       >
-        <p />
+        <p>
+          miniTest
+        </p>
       </div>
     </div>
   </div>,

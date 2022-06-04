@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import axios from 'axios';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import MockAdapter from 'axios-mock-adapter';
 import Home from '../pages/Home';
 import store from '../redux/configureStore';
-import { fetchCountries } from '../redux/covid';
+import reducer, { fetchCountries } from '../redux/covid';
 
 const sampleCountriesResponse = [
   {
@@ -38,30 +38,32 @@ describe('Tests: Homepage', () => {
     mockNetworkResponse();
   });
 
-  test('should render', () => {
-    const home = render(
-      <Provider store={store}>
+  it('should render', () => {
+    const tree = renderer.create(
+      <React.StrictMode>
         <Router>
-          <Home />
+          <Provider store={store}>
+            <Home />
+          </Provider>
         </Router>
-      </Provider>,
+      </React.StrictMode>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('Should initially set countries to empty array', () => {
+    expect(reducer(undefined, {})).toEqual(
+      {
+        countries: [],
+        regions: [],
+        status: 'idle',
+        error: null,
+      },
     );
-    expect(home).toMatchSnapshot();
   });
 
-  it('Should initially set countries and regions to empty array', () => {
-    // const state = store.getState().countries;
-    // console.log(state);
-    // expect(state).toEqual({ countries });
-    // expect(state.regions).toEqual([]);
-    expect(1).toBe(1);
-  });
-
-  it('should fetch countries with their covid info', async () => {
-    // const result = await store.dispatch(fetchCountries());
-    // const countries = result.payload;
-    // expect(result.type).toBe('countries/fetchCountries/fulfilled');
-    // expect(countries).toEqual(sampleCountriesResponse);
-    expect(1).toBe(1);
+  it('should fetch countries successfully with their covid info', async () => {
+    const result = await store.dispatch(fetchCountries());
+    expect(result.type).toBe('countries/fetchCountries/fulfilled');
   });
 });

@@ -19,7 +19,7 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
   }
 });
 
-export const fetchRegionsBasedOnCountry = createAsyncThunk('/countries/fetchRegions', async ({ country, date }) => {
+export const fetchRegionsBasedOnCountry = createAsyncThunk('countries/fetchRegions', async ({ country, date }) => {
   try {
     const response = await axios.get(`${covidBaseUrl}/api/${date}/country/${country}`);
     const { regions } = response.data.dates[date].countries[country];
