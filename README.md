@@ -10,7 +10,7 @@
 
 ## DEMO
 
-[Live Demo Link](https://heroku_link_goes_here.com)
+[Live Demo Link](https://sabetech.github.io/react-metrics-capstone/)
 [Video Demo Link](https://www.loom.com/share/5fa4ea687ee84c37b22f1b6cabf1239c)
 
 ## Getting Started
