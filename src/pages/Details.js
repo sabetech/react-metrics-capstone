@@ -29,11 +29,11 @@ function Details() {
       <ul className="detail-parent">
         {
                     regions.length > 0
-                      ? regions.map((region, i) => (
-                        <li key={i} className="detail-list-item">
+                      ? regions.map((region) => (
+                        <li key={region.name} className="detail-list-item">
                           <p>{region.name}</p>
                           <p>
-                            Confirmed Cases:
+                            Confirmed Cases:&nbsp;
                             {region.today_confirmed}
                           </p>
                         </li>

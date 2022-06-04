@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -8,7 +9,9 @@ export const fetchCountries = createAsyncThunk('countries/fetchCountries', async
     const response = await axios.get(`${covidBaseUrl}/api/2022-02-06`);
     const { countries } = response.data.dates[Object.keys(response.data.dates)[0]];
     const countryKeys = Object.keys(countries);
-    const countryData = countryKeys.map((countryKey) => countries[countryKey]).filter((country, i) => i < 60);
+    const countryData = countryKeys.map(
+      (countryKey) => countries[countryKey],
+    ).filter((_, i) => i < 60);
 
     return countryData;
   } catch (err) {
