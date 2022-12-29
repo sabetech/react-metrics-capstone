@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests: Homepage should render 1`] = `
+<div
+  className="container"
+>
+  <nav>
+    <h3
+      className="heading"
+    >
+      Country-Based Covid Stats
+    </h3>
+  </nav>
+  <div
+    className="sticky-header"
+  >
+    <div
+      className="card-label"
+    >
+      <p>
+        Date: undefined
+      </p>
+    </div>
+    <div
+      className="stats-by-country"
+    >
+      <p>
+        STATS BY COUNTRY
+      </p>
+    </div>
+  </div>
+  <ul
+    className="country-list"
+  />
+</div>
+`;

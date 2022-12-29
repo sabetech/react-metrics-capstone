@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIdle } from '../redux/covid';
@@ -17,7 +18,7 @@ const Header = ({
   return (
     <>
       <nav>
-        {hasBack && <button onClick={() => handleBack()} className="btn-back">◀</button>}
+        {hasBack && <button type="button" onClick={() => handleBack()} className="btn-back">◀</button>}
         <h3 className="heading">{navbarTitle}</h3>
       </nav>
       <div className="sticky-header">
@@ -30,6 +31,13 @@ const Header = ({
       </div>
     </>
   );
+};
+
+Header.propTypes = {
+  headerName: PropTypes.string.isRequired,
+  navbarTitle: PropTypes.string.isRequired,
+  miniTitle: PropTypes.string.isRequired,
+  hasBack: PropTypes.bool.isRequired,
 };
 
 export default Header;
