@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-metrics-capstone/static/css/main.05246e61.css",
+    "main.js": "/react-metrics-capstone/static/js/main.42259948.js",
+    "static/js/787.1b828d53.chunk.js": "/react-metrics-capstone/static/js/787.1b828d53.chunk.js",
+    "index.html": "/react-metrics-capstone/index.html",
+    "main.05246e61.css.map": "/react-metrics-capstone/static/css/main.05246e61.css.map",
+    "main.42259948.js.map": "/react-metrics-capstone/static/js/main.42259948.js.map",
+    "787.1b828d53.chunk.js.map": "/react-metrics-capstone/static/js/787.1b828d53.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05246e61.css",
+    "static/js/main.42259948.js"
+  ]
+}
