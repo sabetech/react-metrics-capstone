@@ -6,7 +6,7 @@ const covidBaseUrl = 'https://api.covid19tracking.narrativa.com';
 
 export const fetchCountries = createAsyncThunk('countries/fetchCountries', async () => {
   try {
-    const response = await axios.get(`${covidBaseUrl}/api/2022-02-06`);
+    const response = await axios.get(`${covidBaseUrl}/api/2022-02-10`);
     const { countries } = response.data.dates[Object.keys(response.data.dates)[0]];
     const countryKeys = Object.keys(countries);
     const countryData = countryKeys.map(

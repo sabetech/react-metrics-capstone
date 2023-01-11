@@ -4,6 +4,9 @@
 
 > The application fetches Covid Data from the Narrativa API and shows in a country by country display according to the date you are looking for.
 
+This application uses the Narrativa API but unfortunately it is no longer available and it has caused the app to break.
+[Narrativa API is no long available](https://www.narrativa.com/narrativa-covid-19-tracking-project-will-no-longer-be-available/)
+
 ## Built With
 
 - **Reactjs** and **Redux** and **Javascript**
